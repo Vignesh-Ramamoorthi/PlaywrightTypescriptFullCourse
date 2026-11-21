@@ -6,7 +6,9 @@ import { CustomWorld } from './world';
 Before({ timeout: 30000 }, async function (this: CustomWorld) {
 
   this.browser = await chromium.launch({
+    channel: 'chrome',
     headless: false
+
   });
 
   this.context = await this.browser.newContext();

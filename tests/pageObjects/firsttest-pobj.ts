@@ -27,23 +27,23 @@ export class firsttestPobj {
         };
     }
 
-    //second part
+    //first part    
 
-    //funtions/methods
+   //funtions/methods
 
     async launchURL(): Promise<void>{
 
-        await this.page.goto("https://www.github.com");
+        await this.page.goto("https://github.com/");
 
     }
 
-    async clicksignInLink(): Promise<void>{
+    async clicksignin(): Promise<void>{
 
         await this.locators.signInLink.click();
 
     }
 
-    async Enterusername(username: string): Promise<void>{
+    async Username(username: string): Promise<void>{
 
         await this.locators.usernameTxtbox.fill(username);
     }
@@ -53,7 +53,7 @@ export class firsttestPobj {
         await this.locators.passwordTxtbox.fill(password);
     }
 
-    async clickSigninBtn(): Promise<void>{
+    async clicksigninbtn(): Promise<void>{
 
        await this.locators.signInBtn.click();
     }

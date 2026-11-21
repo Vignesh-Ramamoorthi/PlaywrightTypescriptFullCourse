@@ -14,13 +14,14 @@ Given('I Login to GH URL', async function(this: CustomWorld){
 When('I Click on sign on button', async function(this: CustomWorld){
 
     const firsttest = new firsttestPobj(this.page);
-    await firsttest.clicksignInLink();
+    await firsttest.clicksigninbtn();
 });
 
 When('I Enter {string} in username field', async function(this: CustomWorld, username: string){
 
     const firsttest = new firsttestPobj(this.page);
-    await firsttest.Enterusername(username);
+
+    await firsttest.Username(username);
 
 });
 
@@ -35,7 +36,7 @@ When('I Enter {string} in password field', async function(this: CustomWorld, pas
 When('I Click on sign in button', async function(this: CustomWorld){
 
    const firsttest = new firsttestPobj(this.page);
-    await firsttest.clickSigninBtn();
+   await firsttest.clicksigninbtn();
 
 });
 
