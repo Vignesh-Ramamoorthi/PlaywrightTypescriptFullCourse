@@ -12,7 +12,7 @@ Then I verify Error message is displayed
 
 Examples:
 | username | password   |
-| User1    | Password1  |
+| User1    | Password 12  |
 
 @login_valid_Test1 @regression @sridevi
 Scenario Outline: Valid credentials
