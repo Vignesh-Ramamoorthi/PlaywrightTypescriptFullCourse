@@ -1,98 +1,87 @@
-import {Given, When, Then} from '@cucumber/cucumber';
-import {Page, expect} from "@playwright/test";
+import {Given, Then, When} from '@cucumber/cucumber';
 import { CustomWorld } from '../support/world';
-import {firsttestPobj} from '../../tests/pageObjects/firsttest-pobj';
+import {testPobj} from '../../tests/pageObjects/Test-pobj';
 
 
 Given('I Login to Reqres URL', async function(this: CustomWorld){
 
-    const launchURL = new firsttestPobj(this.page);
+    const launchURL = new testPobj(this.page);
     await launchURL.launchURL();
 
 });
 
-When('I Click on pricing link', async function(this: CustomWorld){
+Then('I verify the Pricing link is displayed', async function(this: CustomWorld){
 
-    const firsttest = new firsttestPobj(this.page);
-    await this.page.getByRole('link', { name: 'Pricing' }).click();
-
-});
-
-When('I Click on Teams link', async function(this: CustomWorld){
-
-    const firsttest = new firsttestPobj(this.page);
-    await this.page.getByRole('link', { name: 'Teams' }).click();
+    const testpobj = new testPobj(this.page);
+    await testpobj.pricingLink();
 
 });
 
+Then('I verify the Teams link is displayed', async function(this: CustomWorld){
 
-When('I Click on Blog link', async function(this: CustomWorld){
+    const testpobj = new testPobj(this.page);
+    await testpobj.teamsLink();
+});
 
-    const firsttest = new firsttestPobj(this.page);
-    await this.page.getByRole('link', { name: 'Blog' }).click();
+Then('I verify the Blog link is displayed', async function(this: CustomWorld){
+
+    const testpobj = new testPobj(this.page);
+    await testpobj.blogLink();
+});
+
+Then('I verify the Docs link is displayed', async function(this: CustomWorld){
+
+    const testpobj = new testPobj(this.page);
+    await testpobj.docsLink();
+});
+
+Then('I verify the About link is displayed', async function(this: CustomWorld){
+
+    const testpobj = new testPobj(this.page);
+    await testpobj.aboutLink();
+
+
+})
+
+
+
+When('I click on get your free API button', async function(this: CustomWorld){
+
+    const testpobj = new testPobj(this.page);
+    await testpobj.clickGetYourFreeAPIKeyButton();
 
 });
 
 
-When('I Click on Docs link', async function(this: CustomWorld){
+When('I Enter {string} in email field', async function(this: CustomWorld, Email: string){
 
-    const firsttest = new firsttestPobj(this.page);
-    await this.page.getByRole('link', { name: 'Docs' }).click();
-
-});
-
-
-When('I Click on About link', async function(this: CustomWorld){
-
-    const firsttest = new firsttestPobj(this.page);
-    await this.page.getByRole('link', { name: 'About' }).click();
+    const testpobj = new testPobj(this.page);
+    await testpobj.enteremailaddress(Email);
 
 });
 
-Given('I Login to Reqres URL', async function(this: CustomWorld){
-
-    const launchURL = new firsttestPobj(this.page);
-    await launchURL.launchURL();
-
-});
-
-When('I Click on Getyourfreeapikey', async function(this: CustomWorld){
-
-    const firsttest = new firsttestPobj(this.page);
-    await firsttest.clicksignin();
-});
 
 
-When('I Enter {string} in emailaddress field', async function(this: CustomWorld, username: string){
-
-
-     const firsttest = new firsttestPobj(this.page);
-     await this.page.getByRole('textbox', { name: 'Email address' }).fill(username);
-
-});
-
-When('I Enter {string} in password field', async function(this: CustomWorld, password: string){
+When('I click on {string} in password field', async function(this: CustomWorld, password: string){
 
       
-  const firsttest = new firsttestPobj(this.page);
-    await firsttest.Enterpassword(password);
+  const testpobj = new testPobj(this.page);
+    await testpobj.enterpasswordfield(password);
 
 });
 
-When('I Click on continue button', async function(this: CustomWorld){
-
-     const firsttest = new firsttestPobj(this.page);
-     await this.page.getByRole('button', { name: 'Continue' }).click();
-
-});
-
-Then('I verify Error message is displayed', async function(this: CustomWorld){
-
-    const firsttest = new firsttestPobj(this.page);
-    await firsttest.verifyPopUpErrorMsg();
+When('I click on continue button', async function(this: CustomWorld){
+      
+  const testpobj = new testPobj(this.page);
+    await testpobj.clickcontinuebutton();
 
 });
 
 
+Then('I verify Error the message is displayed', async function(this: CustomWorld){
 
+    const testpobj = new testPobj(this.page);
+    await testpobj.verifypopuperrormsg();
+
+})
 
